@@ -6,17 +6,17 @@
 /*   By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:08:10 by lpicciri          #+#    #+#             */
-/*   Updated: 2023/02/17 15:16:10 by lpicciri         ###   ########.fr       */
+/*   Updated: 2023/09/21 23:08:03 by lpicciri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, int start, int len)
 {
 	char	*str;
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
 
 	if (!s)
 		return (NULL);
