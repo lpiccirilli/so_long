@@ -6,7 +6,7 @@
 /*   By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:34:47 by lpicciri          #+#    #+#             */
-/*   Updated: 2023/09/22 00:14:54 by lpicciri         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:18:39 by lpicciri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,10 @@
 # define KEY_ESC 53
 # define KEY_Q 12
 
-
 typedef struct s_map
 {
 	int		fd;
 	char	**map;
-	char	*buff;
 	char	**matrix;
 	int		x_size;
 	int		y_size;
@@ -44,14 +42,20 @@ typedef struct s_mlx
 {
 	void	*mlx;
 	void	*win;
+	void	*images[6];
+	int		width;
+	int		height;
+	int		map_width;
+	int		map_height;
 }			t_mlx;
 
 int		check_map(t_map *map);
 int		check_file(char *file);
-int		check(char *path, t_map *map);
+int		check(char *path, t_map *map, t_mlx *mlx_data);
 int		check_letters(t_map *map);
 int		check_top_and_down(t_map *map);
 int		check_left_and_right(t_map *map);
-void	init_mlx(t_mlx *mlx_data);
+void	init_mlx(t_mlx *mlx_data, t_map *map);
+int		load_images(t_mlx* mlx);
 
 # endif

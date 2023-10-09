@@ -6,7 +6,7 @@
 /*   By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:10:35 by lpicciri          #+#    #+#             */
-/*   Updated: 2023/09/21 23:16:02 by lpicciri         ###   ########.fr       */
+/*   Updated: 2023/10/05 17:52:07 by lpicciri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,14 @@ int	check_map(t_map *map)
 	return (0);
 }
 
-int	check(char *path, t_map *map)
+int	check(char *path, t_map *map, t_mlx *mlx_data)
 {
 	if (check_file(path) == -1)
 		return (-1);
 	map->fd = open(path, O_RDONLY);
 	if (check_map(map) == -1)
 		return (-1);
+	mlx_data->map_height = map->y_size * 64;
+	mlx_data->map_width = map->x_size * 64;
 	return (0);
 }

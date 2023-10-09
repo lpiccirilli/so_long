@@ -6,7 +6,7 @@
 /*   By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 14:20:12 by lpicciri          #+#    #+#             */
-/*   Updated: 2023/09/21 20:58:44 by lpicciri         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:18:08 by lpicciri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	main(int ac, char**av)
 
 	if (ac != 2)
 		return (-1);
-	if (check(av[1], &map) == -1)
+	if (check(av[1], &map, &mlx_data) == -1)
 		return (-1);
-	init_mlx(&mlx_data);
+	init_mlx(&mlx_data, &map);
 	return (0);
 }

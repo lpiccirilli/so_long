@@ -6,7 +6,7 @@
 #    By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/21 20:09:00 by lpicciri          #+#    #+#              #
-#    Updated: 2023/09/21 20:23:55 by lpicciri         ###   ########.fr        #
+#    Updated: 2023/09/29 19:18:07 by lpicciri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ MINILIBX		=	$(MINILIBX_PATH)/libmlx.a
 LIBFT_PATH		=	./libft
 LIBFT			=	$(LIBFT_PATH)/libft.a
 
-SOURCES_FILES	=	so_long.c map_check.c mlx_data.c check_walls.c\
+SOURCES_FILES	=	so_long.c map_check.c mlx_data.c check_walls.c create_map.c\
 
 HEADER			=	./so_long.h
 
