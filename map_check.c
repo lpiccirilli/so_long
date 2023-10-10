@@ -6,7 +6,7 @@
 /*   By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:10:35 by lpicciri          #+#    #+#             */
-/*   Updated: 2023/10/05 17:52:07 by lpicciri         ###   ########.fr       */
+/*   Updated: 2023/10/10 18:42:28 by lpicciri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,40 @@
 
 int	check_file(char *file)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (file[i])
 		i++;
-	if (file[i - 1] != 'r' || file[i - 2] != 'e' || file[i - 3] != 'b' || file[i - 4] != '.')
+	if (file[i - 1] != 'r' || file[i - 2] != 'e' || file[i - 3] != 'b'
+		|| file[i - 4] != '.')
 		return (-1);
 	return (0);
 }
+
 int	check_map(t_map *map)
 {
-	char *temp;
-	int	cont;
-	int	i;
+	int		cont;
+	int		i;
 
 	cont = 0;
 	i = 0;
-	if (!(temp = malloc(sizeof(char) * BUFFER)))
+	map->temp = malloc(sizeof(char) * BUFFER);
+	if (map->temp == NULL)
 		return (-1);
-	read(map->fd, temp, BUFFER);
-	while(temp[i] != '\0')
+	read (map->fd, map->temp, BUFFER);
+	while (map->temp[i] != '\0')
 	{
-		if (temp[i] == '\n')
+		if (map->temp[i] == '\n')
 			cont++;
 		i++;
 	}
-	map->matrix = ft_split(temp, '\n');
+	map->matrix = ft_split (map->temp, '\n');
 	map->matrix[cont] = NULL;
-	map->x_size = ft_strlen(map->matrix[0]);
+	map->x_size = ft_strlen (map->matrix[0]);
 	map->y_size = cont;
-	if (check_letters(map) == -1)
+	if (check_letters (map) == -1)
 		return (-1);
-	free(temp);
 	if (!map->matrix)
 		return (-1);
 	return (0);
