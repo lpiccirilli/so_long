@@ -6,7 +6,7 @@
 /*   By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:22:28 by lpicciri          #+#    #+#             */
-/*   Updated: 2023/10/10 19:53:10 by lpicciri         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:01:58 by lpicciri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,12 @@ int	search_player_y(t_mlx *mlx)
 void	my_exit(t_mlx *mlx)
 {
 	mlx_destroy_window(mlx->mlx, mlx->win);
+	mlx_destroy_image(mlx->mlx, mlx->images[0]);
+	mlx_destroy_image(mlx->mlx, mlx->images[1]);
+	mlx_destroy_image(mlx->mlx, mlx->images[2]);
+	mlx_destroy_image(mlx->mlx, mlx->images[3]);
+	mlx_destroy_image(mlx->mlx, mlx->images[4]);
+	free(mlx->mlx);
 	free(mlx->map_data->temp);
 	exit(0);
 }
