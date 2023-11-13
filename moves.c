@@ -6,7 +6,7 @@
 /*   By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 15:41:28 by lpicciri          #+#    #+#             */
-/*   Updated: 2023/10/10 19:42:35 by lpicciri         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:19:48 by lpicciri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	move_a(t_mlx *mlx)
 	{
 		if (mlx->collectable == 0)
 		{
-			printf("Moves: %d\n", mlx->moves + 1);
+			ft_printf("Moves: %d\n", mlx->moves + 1);
 			my_exit (mlx);
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:50:32 by lpicciri          #+#    #+#             */
-/*   Updated: 2023/10/10 19:42:52 by lpicciri         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:19:43 by lpicciri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	key_hook(int keycode, t_mlx *mlx_data)
 	if (keycode == 2)
 		mlx_data->moves += move_d(mlx_data);
 	if (mlx_data->moves != current_move)
-		printf("Moves: %d\n", mlx_data->moves);
+		ft_printf("Moves: %d\n", mlx_data->moves);
 	init_map(mlx_data, mlx_data->map_data);
 	return (0);
 }

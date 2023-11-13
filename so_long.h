@@ -6,7 +6,7 @@
 /*   By: lpicciri <lpicciri@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:34:47 by lpicciri          #+#    #+#             */
-/*   Updated: 2023/10/10 19:56:30 by lpicciri         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:54:04 by lpicciri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include <math.h>
 # include "../mlx/mlx.h"
 # include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
 
 # define BUFFER 1000000
 # define KEY_ESC 53
@@ -58,6 +58,11 @@ int		check(char *path, t_map *map, t_mlx *mlx_data);
 int		check_letters(t_map *map);
 int		check_top_and_down(t_map *map);
 int		check_left_and_right(t_map *map);
+int		check_rectangle(t_map *map);
+int		check_inside(t_map *map);
+int		check_e(t_map *map);
+int		check_p(t_map *map);
+int		check_c(t_map *map);
 void	init_mlx(t_mlx *mlx_data, t_map *map);
 int		load_images(t_mlx *mlx);
 int		init_map(t_mlx *mlx, t_map *map);
